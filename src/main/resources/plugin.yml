@@ -1,0 +1,9 @@
+name: PaizaMC
+version: @version@
+main: com.github.paizalearning.paizamc.PaizaMC
+api-version: 1.16
+author: kebhr
+commands:
+  name:
+    description: ニックネームを設定する
+    usage: /name [nickname]
