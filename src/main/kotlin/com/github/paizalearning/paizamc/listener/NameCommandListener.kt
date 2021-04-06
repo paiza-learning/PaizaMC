@@ -13,8 +13,13 @@ object NameCommandListener: CommandExecutor {
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
         if (sender is Player) {
             val team = board.getTeam(sender.name)
-            team?.prefix = "[" + args[0] + "]"
-            sender.setDisplayName(args[0])
+            if (args.isEmpty()) {
+                team?.prefix = ""
+                sender.setDisplayName(sender.name)
+            } else {
+                team?.prefix = "[" + args[0] + "]"
+                sender.setDisplayName(args[0])
+            }
         }
         return true
     }
